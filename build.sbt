@@ -1,4 +1,4 @@
-ThisBuild / version := "0.1.0-SNAPSHOT"
+ThisBuild / version := "1.0.0"
 
 ThisBuild / scalaVersion := "2.12.18"
 
@@ -14,8 +14,8 @@ scalaVersion := "2.12.18" // Spark 3.2.x supports Scala 2.12.x
 val sparkVersion = "3.2.1"
 
 libraryDependencies ++= Seq(
-  "org.apache.spark" %% "spark-core" % sparkVersion,
-  "org.apache.spark" %% "spark-sql" % sparkVersion,
+  "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
+  "org.apache.spark" %% "spark-sql" % sparkVersion % "provided",
 
 
 )
@@ -33,3 +33,4 @@ assemblyMergeStrategy in assembly := {
   case "application.conf" => MergeStrategy.concat
   case _ => MergeStrategy.first
 }
+
